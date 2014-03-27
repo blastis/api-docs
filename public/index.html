@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Blastis - API Docs</title><meta name="description" content="Manage your applications or platform on Blastis with our advanced RESTful API, allowing you to instantly manage users, messages, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="Blastis - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="Blastis - API Docs"><meta property="og:description" content="Manage your applications or platform on Blastis with our advanced RESTful API, allowing you to instantly manage users, messages, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png" type="image/x-icon"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#users-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Users API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-users" class="gotohash">List Users</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#reports-by-file-name-api" class="gotohash"><span id="iconSizer"><i class="fa fa-group"></i></span> Clients API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#reports-by-file-name-api" class="gotohash">Reports by File Name API</a></li><li class="nav-sub"><a href="#reports-by-custom-domain-api" class="gotohash">Reports by Custom Domain API</a></li><li class="nav-sub"><a href="#reports-for-live-zones-api" class="gotohash">Reports for Live Zones API</a></li></ul><li><a href="#canned-responses-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Canned Responses API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-canned-responses" class="gotohash">List Canned Responses</a></li></ul><li><a href="https://github.com/blastis/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="blastis-api-docs">BLASTIS API Docs</h1>
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Blastis - API Docs</title><meta name="description" content="Manage your applications or platform on Blastis with our advanced RESTful API, allowing you to instantly manage users, messages, and accounts with ease."><meta http-equiv="cleartype" content="on"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><meta property="og:site_name" content="Blastis - API Docs"><meta property="og:type" content="website"><meta property="og:title" content="Blastis - API Docs"><meta property="og:description" content="Manage your applications or platform on Blastis with our advanced RESTful API, allowing you to instantly manage users, messages, and accounts with ease."><meta property="og:image" content="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png"><link rel="shortcut icon" href="//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png" type="image/x-icon"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css"><link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"><link rel="stylesheet" href="//fonts.googleapis.com/css?family=Cuprum:400,700"><link rel="stylesheet" href="css/docs.min.css"></head><body data-spy="scroll" data-target="#docs-navbar" data-offset="83"><div id="spacer"></div><div class="navbar navbar-inverse navbar-fixed-top"><div class="navbar-inner"><div class="container"><a href="/" class="brand"></a></div></div></div><div class="container"><div class="row"><div class="span3"><div id="docs-navbar" data-spy="affix"><div class="row"><div class="span3"><ul class="nav nav-pills nav-stacked"><li class="active"><a href="#overview">Overview</a></li><li><a href="#support" class="gotohash">Support</a></li><li><a href="#changelog" class="gotohash">Changelog</a></li><li><a href="#authentication" class="gotohash">Authentication</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#auth-overview" class="gotohash">Overview</a></li><li class="nav-sub"><a href="#3-legged-oauth" class="gotohash">3-legged OAuth</a></li><li class="nav-sub"><a href="#2-legged-oauth" class="gotohash">2-legged OAuth</a></li><li class="nav-sub"><a href="#registering-your-application" class="gotohash">Registering Your Application</a></li><li class="nav-sub"><a href="#signing-requests" class="gotohash">Signing Requests</a></li><li class="nav-sub"><a href="#request-tokens" class="gotohash">Request Tokens</a></li><li class="nav-sub"><a href="#user-authorization" class="gotohash">User Authorization</a></li><li class="nav-sub"><a href="#key-path-parameters" class="gotohash">Key: Path Parameters</a></li></ul><li><a href="#account-api" class="gotohash"><span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account" class="gotohash">Get Account</a></li><li class="nav-sub"><a href="#update-account" class="gotohash">Update Account</a></li><li class="nav-sub"><a href="#get-account-address" class="gotohash">Get Account Address</a></li><li class="nav-sub"><a href="#update-account-address" class="gotohash">Update Account Address</a></li></ul><li><a href="#agents-api" class="gotohash"><span id="iconSizer"><i class="fa fa-user"></i></span> Agents API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-agents" class="gotohash">List Agents</a></li><li class="nav-sub"><a href="#create-user" class="gotohash">Create User</a></li><li class="nav-sub"><a href="#get-user" class="gotohash">Get User</a></li><li class="nav-sub"><a href="#update-user" class="gotohash">Update User</a></li><li class="nav-sub"><a href="#delete-user" class="gotohash">Delete User</a></li></ul><li><a href="#zones-api" class="gotohash"><span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-zones" class="gotohash">List Zones</a></li><li class="nav-sub"><a href="#get-zone-summary" class="gotohash">Get Zone Summary</a></li><li class="nav-sub"><a href="#get-zone-count" class="gotohash">Get Zone Count</a></li><li class="nav-sub"><a href="#pull-zone-api" class="gotohash">Pull Zone API</a></li><li class="nav-sub"><a href="#pull-zone-custom-domains-api" class="gotohash">Pull Zone Custom Domains API</a></li><li class="nav-sub"><a href="#push-zone-api" class="gotohash">Push Zone API</a></li><li class="nav-sub"><a href="#push-zone-custom-domains-api" class="gotohash">Push Zone Custom Domains API</a></li><li class="nav-sub"><a href="#vod-zone-api" class="gotohash">VOD Zone API</a></li><li class="nav-sub"><a href="#vod-zone-custom-domains-api" class="gotohash">VOD Zone Custom Domains API</a></li><li class="nav-sub"><a href="#live-zone-api" class="gotohash">Live Zone API</a></li><li class="nav-sub"><a href="#zones-ssl-api" class="gotohash">Zones SSL API</a></li><li class="nav-sub"><a href="#zones-upstream-api" class="gotohash">Zones Upstream API</a></li></ul><li><a href="#reports-api" class="gotohash"><span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#get-account-stats" class="gotohash">Account Stats</a></li><li class="nav-sub"><a href="#get-all-zone-stats" class="gotohash">Stats for all Zones</a></li><li class="nav-sub"><a href="#get-a-zones-stats" class="gotohash">Stats for a Zone</a></li><li class="nav-sub"><a href="#reports-by-location-api" class="gotohash">Reports by Location API</a></li><li class="nav-sub"><a href="#reports-by-popular-files-api" class="gotohash">Reports by Popular Files API</a></li><li class="nav-sub"><a href="#reports-by-status-codes-api" class="gotohash">Reports by Status Codes API</a></li><li class="nav-sub"><a href="#reports-by-file-types-api" class="gotohash">Reports by File Types API</a></li><li class="nav-sub"><a href="#reports-by-file-size-ranges-api" class="gotohash">Reports by File Size Ranges API</a></li><li class="nav-sub"><a href="#reports-by-directory-api" class="gotohash">Reports by Directory API</a></li></ul><li><a href="#reports-by-file-name-api" class="gotohash"><span id="iconSizer"><i class="fa fa-group"></i></span> Clients API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#reports-by-file-name-api" class="gotohash">Reports by File Name API</a></li><li class="nav-sub"><a href="#reports-by-custom-domain-api" class="gotohash">Reports by Custom Domain API</a></li><li class="nav-sub"><a href="#reports-for-live-zones-api" class="gotohash">Reports for Live Zones API</a></li></ul><li><a href="#canned-responses-api" class="gotohash"><span id="iconSizer"><i class="fa fa-tags"></i></span> Canned Responses API</a></li><ul class="nav-bold nav-down hide"><li class="nav-sub"><a href="#list-canned-responses" class="gotohash">List Canned Responses</a></li><li class="nav-sub"><a href="#update-canned-response" class="gotohash">Update Canned Response</a></li><li class="nav-sub"><a href="#delete-canned-response" class="gotohash">Delete Canned Response</a></li></ul><li><a href="https://github.com/blastis/api-docs"><span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo</a></li></ul></div></div></div></div><div id="readme-docs" class="span9"><h1 id="blastis-api-docs">BLASTIS API Docs</h1>
 <p><a href="http://www.blastis.com">BLASTIS</a> is a multi app company.</p>
 <h2 id="index">Index</h2>
 <ul>
@@ -7,10 +7,11 @@
 <li><a href="#changelog">Changelog</a></li>
 <li><a href="#authentication">Authentication</a></li>
 <li><a href="#account-api">Account API</a></li>
-<li><a href="#users-api">Users API</a></li>
+<li><a href="#agents-api">Agents API</a></li>
 <li><a href="#zones-api">Zones API</a></li>
 <li><a href="#reports-api">Reports API</a></li>
 <li><a href="#reports-by-file-name-api">Clients API</a></li>
+<li><a href="#canned-responses-api">Canned Responses API</a></li>
 </ul>
 <h2 id="overview">Overview</h2>
 <ol>
@@ -21,11 +22,7 @@
 <li><p>Integrate with our RESTful API using your language wrapper:</p>
 <ul>
 <li>Node (NPM) <a href="https://github.com/maxcdn/node-maxcdn">https://github.com/maxcdn/node-maxcdn</a></li>
-<li>.NET <a href="https://github.com/netdna/netdnarws-net">https://github.com/netdna/netdnarws-net</a></li>
-<li>Ruby <a href="https://github.com/maxcdn/ruby-maxcdn">https://github.com/maxcdn/ruby-maxcdn</a></li>
-<li>Python <a href="https://github.com/maxcdn/python-maxcdn">https://github.com/maxcdn/python-maxcdn</a></li>
 <li>PHP <a href="https://github.com/netdna/netdnarws-php">https://github.com/netdna/netdnarws-php</a></li>
-<li>Perl <a href="https://github.com/netdna/netdnarws-perl">https://github.com/netdna/netdnarws-perl</a></li>
 </ul>
 </li>
 </ol>
@@ -642,12 +639,13 @@ function callback(err, response) {
   </div>
 </div>
 
-<h1 id="users-api">Users API</h1>
-<h2 id="list-users">List Users</h2>
-<p>Returns a list of all users on the specified account</p>
+<h1 id="agents-api">Agents API</h1>
+<p>Use this integration to manage your agents. This function can also be used to get information regarding your agents. </p>
+<h2 id="list-agents">List Agents</h2>
+<p>Returns a list of all agents on the specified account</p>
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path"><a href="https://rws.netdna.com/{companyalias}/users.json">https://rws.netdna.com/{companyalias}/users.json</a></span></div>
+<span class="path"><a href="https://www.textsol.com/api/agents">https://www.textsol.com/api/agents</a></span></div>
 </div>
 
 <h3 id="response-parameters">Response Parameters</h3>
@@ -661,7 +659,7 @@ function callback(err, response) {
 <tbody>
 <tr>
 <td><code>id</code></td>
-<td>User ID</td>
+<td>AGENT ID</td>
 <td></td>
 </tr>
 <tr>
@@ -728,19 +726,19 @@ function callback(err, response) {
 <div class="tab-content">
   <div class="tab-pane active" id="ruby5">
     <pre>
-api.get(&#39;/users.json&#39;)</pre>
+api.get(&#39;/agents.json&#39;)</pre>
   </div>
   <div class="tab-pane" id="python5">
     <pre>
-api.get(&#39;/users.json&#39;)</pre>
+api.get(&#39;/agents.json&#39;)</pre>
   </div>
   <div class="tab-pane" id="php5">
     <pre>
-$api-&gt;get(&#39;/users.json&#39;);</pre>
+$api-&gt;get(&#39;/agents.json&#39;);</pre>
   </div>
   <div class="tab-pane" id="node5">
   <pre>
-api.get(&#39;/users.json&#39;, callback)
+api.get(&#39;/agents.json&#39;, callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -12153,6 +12151,213 @@ function callback(err, response) {
             }
         ]
     }
+}</pre>
+  </div>
+</div>
+
+
+<h2 id="update-canned-response">Update Canned Response</h2>
+<p>Updates the specified canned response by setting the values of the parameters passed. Any parameters not provided will be left unchanged.</p>
+<div class="heading">
+<div class="url PUT"><span class="http_method">PUT</span>
+<span class="path"><a href="https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}">https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}</a></span></div>
+</div>
+
+<h3 id="accepted-request-parameters">Accepted Request Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Default Value</th>
+<th>Validation</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>email</code></td>
+<td>-</td>
+<td>length: 6-200 chars; valid email address</td>
+<td>Email Address</td>
+<td></td>
+</tr>
+<tr>
+<td><code>firstname</code></td>
+<td>-</td>
+<td>length: 1-32 chars</td>
+<td>First Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastname</code></td>
+<td>-</td>
+<td>length: 1-32 chars</td>
+<td>Last Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>-</td>
+<td>length: 7, 10, 11, or 14 chars; only digits considered</td>
+<td>Phone Number</td>
+<td></td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>-</td>
+<td>valid::timezone</td>
+<td>Valid timezone (see <a href="http://php.net/manual/en/timezones.php">List of Supported Timezones</a>)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="response-parameters">Response Parameters</h3>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>id</code></td>
+<td>User ID</td>
+<td></td>
+</tr>
+<tr>
+<td><code>email</code></td>
+<td>Email Address</td>
+<td></td>
+</tr>
+<tr>
+<td><code>firstname</code></td>
+<td>First Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>lastname</code></td>
+<td>Last Name</td>
+<td></td>
+</tr>
+<tr>
+<td><code>phone</code></td>
+<td>Phone Number</td>
+<td></td>
+</tr>
+<tr>
+<td><code>timezone</code></td>
+<td>User&#39;s Timezone</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab8">
+  <li class="active"><a href="#ruby8" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python8" data-toggle='tab'>Python</a></li>
+  <li><a href="#php8" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node8" data-toggle='tab'>Node</a></li>
+  <li><a href="#response8" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby8">
+  <pre>
+id = &#39;33706&#39;
+params={&#39;firstname&#39;=&gt; &#39;name&#39;}
+api.put(&#39;/users.json/&#39;+id,params)
+</pre>
+  </div>
+  <div class="tab-pane" id="python8">
+    <pre>
+api.put(&#39;/users.json/&#39;+id,params={&#39;firstname&#39;: &#39;name&#39;})</pre>
+  </div>
+  <div class="tab-pane" id="php8">
+    <pre>
+$id = &#39;33941&#39;;
+$params =  array(&quot;firstname&quot;=&gt;&quot;Billy&quot;);
+$api-&gt;put(&#39;/users.json/&#39;.$id,$params);</pre>
+</div>
+  <div class="tab-pane" id="node8">
+  <pre>
+var id = &#39;33941&#39;
+api.put(&#39;/users.json/&#39; + id, { firstname: &#39;Billy&#39; }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response8">
+    <pre>
+{
+    &quot;code&quot;: 200,
+    &quot;data&quot;: {
+        &quot;user&quot;: {
+            &quot;brand_id&quot;: &quot;1&quot;,
+            &quot;date_created&quot;: &quot;2013-05-23 18:22:11&quot;,
+            &quot;date_last_login&quot;: null,
+            &quot;date_updated&quot;: &quot;2013-05-23 19:10:09&quot;,
+            &quot;default_company_id&quot;: &quot;19538&quot;,
+            &quot;email&quot;: &quot;name@domain.com&quot;,
+            &quot;firstname&quot;: &quot;Billy&quot;,
+            &quot;id&quot;: &quot;33941&quot;,
+            &quot;ip_last_login&quot;: null,
+            &quot;isadmin&quot;: &quot;0&quot;,
+            &quot;isdisabled&quot;: &quot;0&quot;,
+            &quot;lastname&quot;: &quot;Family&quot;,
+            &quot;phone&quot;: null,
+            &quot;roles&quot;: [
+                &quot;User&quot;
+            ],
+            &quot;timezone&quot;: &quot;Europe/London&quot;
+        }
+    }
+}</pre>
+  </div>
+</div>
+
+<h2 id="delete-canned-response">Delete Canned Response</h2>
+<p>Removes a canned response with the given {canned_response_id} parameter.</p>
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path"><a href="https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}">https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}</a></span></div>
+</div>
+
+
+<h3 id="code-samples">Code Samples</h3>
+<ul class="nav nav-tabs" id="myTab201">
+  <li class="active"><a href="#curl201" data-toggle='tab'>Curl</a></li>
+  <li><a href="#php201" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node201" data-toggle='tab'>Node</a></li>
+  <li><a href="#response201" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="curl201">
+    <pre>
+curl -u john.doe@mycompany.com:c14b85863755158d7aa5cc4ba17f61cb -H X-API-Version:2 -X DELETE <a href="https://api.textsol.com/canned_responses/3181">https://api.textsol.com/canned_responses/3181</a>
+    </pre>
+  </div>
+
+  <div class="tab-pane" id="php201">
+    <pre>
+$id = &#39;33715&#39;;
+$api-&gt;delete(&#39;/users.json/&#39;.$id);</pre>
+  </div>
+  <div class="tab-pane" id="node201">
+  <pre>
+var id = &#39;33715&#39;
+api.delete(&#39;/users.json/&#39; + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response201">
+    <pre>
+{
+  &quot;code&quot;:200
 }</pre>
   </div>
 </div>

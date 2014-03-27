@@ -10,10 +10,11 @@
 * [Changelog](#changelog)
 * [Authentication](#authentication)
 * [Account API](#account-api)
-* [Users API](#users-api)
+* [Agents API](#agents-api)
 * [Zones API](#zones-api)
 * [Reports API](#reports-api)
 * [Clients API](#reports-by-file-name-api)
+* [Canned Responses API](#canned-responses-api)
 
 
 ## Overview
@@ -24,11 +25,7 @@
 
 3. Integrate with our RESTful API using your language wrapper:
   - Node (NPM) <https://github.com/maxcdn/node-maxcdn>
-  - .NET <https://github.com/netdna/netdnarws-net>
-  - Ruby <https://github.com/maxcdn/ruby-maxcdn>
-  - Python <https://github.com/maxcdn/python-maxcdn>
   - PHP <https://github.com/netdna/netdnarws-php>
-  - Perl <https://github.com/netdna/netdnarws-perl>
 
 ## Support
 
@@ -437,22 +434,24 @@ function callback(err, response) {
   </div>
 </div>
 
-# Users API
+# Agents API
 
-## List Users
+Use this integration to manage your agents. This function can also be used to get information regarding your agents. 
 
-Returns a list of all users on the specified account
+## List Agents
+
+Returns a list of all agents on the specified account
 
 <div class="heading">
 <div class="url GET"><span class="http_method">GET</span>
-<span class="path">https://rws.netdna.com/{companyalias}/users.json</span></div>
+<span class="path">https://www.textsol.com/api/agents</span></div>
 </div>
 
 ### Response Parameters
 
 Parameter | Description |
 --- | --- | ---
-`id` | User ID |
+`id` | AGENT ID |
 `email` | Email Address |
 `firstname` | First Name |
 `lastname` | Last Name |
@@ -477,19 +476,19 @@ Parameter | Description |
 <div class="tab-content">
   <div class="tab-pane active" id="ruby5">
     <pre>
-api.get('/users.json')</pre>
+api.get('/agents.json')</pre>
   </div>
   <div class="tab-pane" id="python5">
     <pre>
-api.get('/users.json')</pre>
+api.get('/agents.json')</pre>
   </div>
   <div class="tab-pane" id="php5">
     <pre>
-$api->get('/users.json');</pre>
+$api->get('/agents.json');</pre>
   </div>
   <div class="tab-pane" id="node5">
   <pre>
-api.get('/users.json', callback)
+api.get('/agents.json', callback)
 function callback(err, response) {
   if (err) return console.log(err)
   console.log(response)
@@ -8623,6 +8622,152 @@ function callback(err, response) {
             }
         ]
     }
+}</pre>
+  </div>
+</div>
+
+
+## Update Canned Response
+
+Updates the specified canned response by setting the values of the parameters passed. Any parameters not provided will be left unchanged.
+
+<div class="heading">
+<div class="url PUT"><span class="http_method">PUT</span>
+<span class="path">https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}</span></div>
+</div>
+
+### Accepted Request Parameters
+
+Parameter | Default Value | Validation | Description |
+--- | --- | --- | --- | ---
+`email` | - | length: 6-200 chars; valid email address | Email Address |
+`firstname` | - | length: 1-32 chars | First Name |
+`lastname` | - | length: 1-32 chars | Last Name |
+`phone` | - | length: 7, 10, 11, or 14 chars; only digits considered | Phone Number |
+`timezone` | - | valid::timezone | Valid timezone (see [List of Supported Timezones](http://php.net/manual/en/timezones.php)) |
+
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`id` | User ID |
+`email` | Email Address |
+`firstname` | First Name |
+`lastname` | Last Name |
+`phone` | Phone Number |
+`timezone` | User's Timezone |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab8">
+  <li class="active"><a href="#ruby8" data-toggle='tab'>Ruby</a></li>
+  <li><a href="#python8" data-toggle='tab'>Python</a></li>
+  <li><a href="#php8" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node8" data-toggle='tab'>Node</a></li>
+  <li><a href="#response8" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="ruby8">
+  <pre>
+id = '33706'
+params={'firstname'=> 'name'}
+api.put('/users.json/'+id,params)
+</pre>
+  </div>
+  <div class="tab-pane" id="python8">
+    <pre>
+api.put('/users.json/'+id,params={'firstname': 'name'})</pre>
+  </div>
+  <div class="tab-pane" id="php8">
+    <pre>
+$id = '33941';
+$params =  array("firstname"=>"Billy");
+$api->put('/users.json/'.$id,$params);</pre>
+</div>
+  <div class="tab-pane" id="node8">
+  <pre>
+var id = '33941'
+api.put('/users.json/' + id, { firstname: 'Billy' }, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response8">
+    <pre>
+{
+    "code": 200,
+    "data": {
+        "user": {
+            "brand_id": "1",
+            "date_created": "2013-05-23 18:22:11",
+            "date_last_login": null,
+            "date_updated": "2013-05-23 19:10:09",
+            "default_company_id": "19538",
+            "email": "name@domain.com",
+            "firstname": "Billy",
+            "id": "33941",
+            "ip_last_login": null,
+            "isadmin": "0",
+            "isdisabled": "0",
+            "lastname": "Family",
+            "phone": null,
+            "roles": [
+                "User"
+            ],
+            "timezone": "Europe/London"
+        }
+    }
+}</pre>
+  </div>
+</div>
+
+## Delete Canned Response
+
+Removes a canned response with the given {canned_response_id} parameter.
+
+<div class="heading">
+<div class="url DELETE"><span class="http_method">DELETE</span>
+<span class="path">https://api.textsol.com/{companyalias}/canned_responses/{canned_response_id}</span></div>
+</div>
+
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab201">
+  <li class="active"><a href="#curl201" data-toggle='tab'>Curl</a></li>
+  <li><a href="#php201" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node201" data-toggle='tab'>Node</a></li>
+  <li><a href="#response201" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="curl201">
+    <pre>
+curl -u john.doe@mycompany.com:c14b85863755158d7aa5cc4ba17f61cb -H X-API-Version:2 -X DELETE https://api.textsol.com/canned_responses/3181
+    </pre>
+  </div>
+ 
+  <div class="tab-pane" id="php201">
+    <pre>
+$id = '33715';
+$api->delete('/users.json/'.$id);</pre>
+  </div>
+  <div class="tab-pane" id="node201">
+  <pre>
+var id = '33715'
+api.delete('/users.json/' + id, callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response201">
+    <pre>
+{
+  "code":200
 }</pre>
   </div>
 </div>
