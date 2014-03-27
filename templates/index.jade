@@ -1,0 +1,120 @@
+- var blank = ''
+doctype
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    title= title
+    meta(name='description', content=description)
+    meta(http-equiv='cleartype', content='on')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    meta(property='og:site_name', content=title)
+    meta(property='og:type', content='website')
+    meta(property='og:title', content=title)
+    meta(property='og:description', content=description)
+    meta(property='og:image', content='//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png')
+    //- TODO: add apple touch icons as per HTML5 boilerplate github index.html file
+    //- <https://github.com/h5bp/html5-boilerplate>
+    link(rel='shortcut icon', href='//maxcdn4support.wpengine.netdna-cdn.com/wp-content/themes/maxcdn_support/assets/img/favicon.png', type='image/x-icon')
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css")
+    link(rel="stylesheet", href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css")
+    link(rel="stylesheet", href="//fonts.googleapis.com/css?family=Cuprum:400,700")
+    link(rel="stylesheet", href="css/docs.min.css")
+  body(data-spy='scroll', data-target='#docs-navbar', data-offset='83')
+    #spacer
+    .navbar.navbar-inverse.navbar-fixed-top
+      .navbar-inner
+        .container
+          a(href='/').brand= blank
+    .container
+      .row
+        .span3
+          #docs-navbar(data-spy='affix')
+            .row
+              .span3
+                ul.nav.nav-pills.nav-stacked
+                  li.active: a(href='#overview') Overview
+                  li: a.gotohash(href="#support") Support
+                  li: a.gotohash(href="#changelog") Changelog
+                  li: a.gotohash(href="#authentication") Authentication
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#auth-overview") Overview
+                    li.nav-sub: a.gotohash(href="#3-legged-oauth") 3-legged OAuth
+                    li.nav-sub: a.gotohash(href="#2-legged-oauth") 2-legged OAuth
+                    li.nav-sub: a.gotohash(href="#registering-your-application") Registering Your Application
+                    li.nav-sub: a.gotohash(href="#signing-requests") Signing Requests
+                    li.nav-sub: a.gotohash(href="#request-tokens") Request Tokens
+                    li.nav-sub: a.gotohash(href="#user-authorization") User Authorization
+                    li.nav-sub: a.gotohash(href="#key-path-parameters") Key: Path Parameters
+                  li: a.gotohash(href="#account-api") <span id="iconSizer"><i class="fa fa-maxcdn"></i></span> Account API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#get-account") Get Account
+                    li.nav-sub: a.gotohash(href="#update-account") Update Account
+                    li.nav-sub: a.gotohash(href="#get-account-address") Get Account Address
+                    li.nav-sub: a.gotohash(href="#update-account-address") Update Account Address
+                  li: a.gotohash(href="#users-api") <span id="iconSizer"><i class="fa fa-user"></i></span> Users API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#list-users") List Users
+                    li.nav-sub: a.gotohash(href="#create-user") Create User
+                    li.nav-sub: a.gotohash(href="#get-user") Get User
+                    li.nav-sub: a.gotohash(href="#update-user") Update User
+                    li.nav-sub: a.gotohash(href="#delete-user") Delete User
+                  li: a.gotohash(href="#zones-api") <span id="iconSizer"><i class="fa fa-cloud"></i></span> Zones API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#list-zones") List Zones
+                    li.nav-sub: a.gotohash(href="#get-zone-summary") Get Zone Summary
+                    li.nav-sub: a.gotohash(href="#get-zone-count") Get Zone Count
+                    li.nav-sub: a.gotohash(href="#pull-zone-api") Pull Zone API
+                    li.nav-sub: a.gotohash(href="#pull-zone-custom-domains-api") Pull Zone Custom Domains API
+                    li.nav-sub: a.gotohash(href="#push-zone-api") Push Zone API
+                    li.nav-sub: a.gotohash(href="#push-zone-custom-domains-api") Push Zone Custom Domains API
+                    li.nav-sub: a.gotohash(href="#vod-zone-api") VOD Zone API
+                    li.nav-sub: a.gotohash(href="#vod-zone-custom-domains-api") VOD Zone Custom Domains API
+                    li.nav-sub: a.gotohash(href="#live-zone-api") Live Zone API
+                    li.nav-sub: a.gotohash(href="#zones-ssl-api") Zones SSL API
+                    li.nav-sub: a.gotohash(href="#zones-upstream-api") Zones Upstream API
+                  li: a.gotohash(href="#reports-api") <span id="iconSizer"><i class="fa fa-signal"></i></span> Reports API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#get-account-stats") Account Stats
+                    li.nav-sub: a.gotohash(href="#get-all-zone-stats") Stats for all Zones
+                    li.nav-sub: a.gotohash(href="#get-a-zones-stats") Stats for a Zone
+                    li.nav-sub: a.gotohash(href="#reports-by-location-api") Reports by Location API
+                    li.nav-sub: a.gotohash(href="#reports-by-popular-files-api") Reports by Popular Files API
+                    li.nav-sub: a.gotohash(href="#reports-by-status-codes-api") Reports by Status Codes API
+                    li.nav-sub: a.gotohash(href="#reports-by-file-types-api") Reports by File Types API
+                    li.nav-sub: a.gotohash(href="#reports-by-file-size-ranges-api") Reports by File Size Ranges API
+                    li.nav-sub: a.gotohash(href="#reports-by-directory-api") Reports by Directory API
+                  li: a.gotohash(href="#reports-by-file-name-api") <span id="iconSizer"><i class="fa fa-group"></i></span> Clients API
+                  ul.nav-bold.nav-down.hide
+                    li.nav-sub: a.gotohash(href="#reports-by-file-name-api") Reports by File Name API
+                    li.nav-sub: a.gotohash(href="#reports-by-custom-domain-api") Reports by Custom Domain API
+                    li.nav-sub: a.gotohash(href="#reports-for-live-zones-api") Reports for Live Zones API
+                  li: a(href='https://github.com/maxcdn/api-docs') <span id="iconSizer"><i class="fa fa-external-link"></i></span> GitHub Repo
+        .span9#readme-docs!= content
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script.
+      window.jQuery || document.write('<script src="js/vendor/jquery.min.js"><\/script>')
+
+    script(src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js")
+
+    script(src="js/vendor/prettify.min.js")
+    script(src="js/vendor/jquery.ba-hashchange.min.js")
+    script(src="js/vendor/jquery.scrollTo.min.js")
+    script(src="js/vendor/bootstrap-adjust-hash.min.js")
+    script(src="js/main.min.js")
+    script.
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-9245214-1']);
+      _gaq.push(['_setDomainName', 'netdna.com']);
+      _gaq.push(['_trackPageview']);
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    script.
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-30196337-2', 'netdna.com');
+      ga('send', 'pageview');
