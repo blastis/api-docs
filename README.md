@@ -1,7 +1,7 @@
 
-# MaxCDN API Docs
+# BLASTIS API Docs
 
-[MaxCDN](http://www.maxcdn.com) is a Content Delivery Network service.
+[BLASTIS](http://www.blastis.com) is a multi app company.
 
 ## Index
 
@@ -18,7 +18,7 @@
 
 ## Overview
 
-1. Login to the [MaxCDN Control Panel](https://cp.maxcdn.com/account/api).
+1. Login to the [Blastis Control Panel](https://cp.maxcdn.com/account/api).
 
 2. Create a [new application](https://cp.maxcdn.com/account/api/create).
 
@@ -34,34 +34,10 @@
 
 * Have a question? Check out our [Knowledge Base](http://support.maxcdn.com/) to see if your question has already been answered.
 * Still need help?  Visit our [Contact Page](http://www.maxcdn.com/contact/) to get in touch.
-* Found a Bug? Visit our [GitHub Issues](https://github.com/maxcdn/rws-bugs/issues?state=open) page to report it.
-* Feel free to Tweet and follow us [@MaxCDNDeveloper](https://twitter.com/maxcdndeveloper) and [@MaxCDN](https://twitter.com/maxcdn).
-
 
 ## Changelog
 
-  - **2014-03-05**  Firefox bug fixes.
-  - **2014-03-05**  Added <a href="#get-all-zone-stats">stats per zone</a> reporting endpoint
-  - **2014-03-03**  Documented `dns_check` property of Pull Zones
-  - **2014-01-10**  Minor grammatical fixes
-  - **2013-09-10**  Rebranded for MaxCDN
-  - **2013-07-22**  Added JSON responses to SSL
-  - **2013-07-09**  Added Authentication section
-  - **2013-06-03**  Fixed formatting and display issues
-  - **2013-06-02**  Added Ruby code examples
-  - **2013-05-31**  Added Python code examples
-  - **2013-05-29**  Added Node code examples
-  - **2013-05-28**  Added response examples
-  - **2013-05-25**  Added PHP code examples
-  - **2013-03-29**  Added "Bad Request" for purges without file(s) parameter in body
-  - **2013-03-14**  Added .ie to the TLD validation
-  - **2013-03-12**  Added single file purge to use cURL multi
-  - **2013-03-12**  Fixed SSL Update Bug
-  - **2013-03-08**  cURL multi purge files
-  - **2013-03-07**  Fix 3-legged OAuth restriction
-  - **2013-01-16**  Fixed SSL bug
-  - **2012-12-05**  Added 2xx_hit calculation to all `statuscodebyfilename` reports
-  - **2012-02-27**  Released alpha Version of RWS API.
+  - **2014-03-27**  Released alpha Version of Live chat API.
 
 ## Authentication
 
@@ -8521,6 +8497,131 @@ api.get('/reports/live/connectionstats.json/' + reportType, function(err, respon
         "pages": 0,
         "stats": [],
         "total": "0"
+    }
+}</pre>
+  </div>
+</div>
+
+
+# Canned Responses API
+
+This function allows you to get a full list of your canned responses and change them. 
+
+## List Canned Responses
+
+Returns a list of all canned responses on the specified account
+
+<div class="heading">
+<div class="url GET"><span class="http_method">GET</span>
+<span class="path">https://api.textsol.com/{companyalias}/users.json</span></div>
+</div>
+
+### Response Parameters
+
+Parameter | Description |
+--- | --- | ---
+`id` | User ID |
+`email` | Email Address |
+`firstname` | First Name |
+`lastname` | Last Name |
+`phone` | Phone Number |
+`date_last_login` | The date and time the user last logged into the system |
+`ip_last_login` | The IP for the user at the last login |
+`date_created` | Date Created |
+`date_updated` | Date Updated |
+`roles` | An array of roles for the given user |
+
+### Code Samples
+
+<ul class="nav nav-tabs" id="myTab200">
+  <li class="active"><a href="#php200" data-toggle='tab'>PHP</a></li>
+  <li><a href="#node200" data-toggle='tab'>Node</a></li>
+  <li><a href="#response200" data-toggle='tab'>Response</a></li>
+</ul>
+
+<div class="tab-content">
+  <div class="tab-pane active" id="php200">
+    <pre>
+$api->get('/canned_responses');</pre>
+  </div>
+  <div class="tab-pane" id="node200">
+  <pre>
+api.get('/canned_responses.json', callback)
+function callback(err, response) {
+  if (err) return console.log(err)
+  console.log(response)
+}</pre>
+  </div>
+  <div class="tab-pane" id="response200">
+    <pre>
+{
+    "code": 200,
+    "data": {
+        "current_page_size": 4,
+        "page": 1,
+        "page_size": "50",
+        "pages": 1,
+        "total": 4,
+        "users": [
+            {
+                "brand_id": "1",
+                "date_created": "2013-05-15 17:32:30",
+                "date_last_login": "2013-05-23 17:54:18",
+                "date_updated": "2013-05-15 17:33:09",
+                "default_company_id": "#####",
+                "email": "name@domain.com",
+                "firstname": "Given",
+                "id": "33706",
+                "ip_last_login": "12.13.90.183",
+                "isadmin": "0",
+                "isdisabled": "0",
+                "lastname": "Family",
+                "phone": "3235551400",
+                "roles": [
+                    "User",
+                    "Account Owner"
+                ],
+                "timezone": "Europe/London"
+            },
+            {
+                "brand_id": "1",
+                "date_created": "2013-05-15 20:16:34",
+                "date_last_login": null,
+                "date_updated": "0000-00-00 00:00:00",
+                "default_company_id": "19538",
+                "email": "caphammer1@hamcave.com",
+                "firstname": "Captain",
+                "id": "33714",
+                "ip_last_login": null,
+                "isadmin": "0",
+                "isdisabled": "0",
+                "lastname": "Hammer",
+                "phone": null,
+                "roles": [
+                    "User"
+                ],
+                "timezone": "Europe/London"
+            },
+            {
+                "brand_id": "1",
+                "date_created": "2013-05-15 20:20:03",
+                "date_last_login": null,
+                "date_updated": "2013-05-15 20:31:05",
+                "default_company_id": "19538",
+                "email": "drhorrible3@ele.net",
+                "firstname": "Billy",
+                "id": "33716",
+                "ip_last_login": null,
+                "isadmin": "0",
+                "isdisabled": "0",
+                "lastname": "Horrible",
+                "phone": null,
+                "roles": [
+                    "User"
+                ],
+                "timezone": "Europe/London"
+            }
+        ]
     }
 }</pre>
   </div>
